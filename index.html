@@ -53,6 +53,10 @@
         {
           alert('unknown');
         }
+
+        if (navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/FBAV/i)) {
+            alert('facebook browser');
+        }
     }
   </script>
 </body>
