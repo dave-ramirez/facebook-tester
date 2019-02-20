@@ -17,7 +17,7 @@
     <h6>Ingresaste desde facebook browser</h6>
   </footer>
   <script>
-    function myFunction() {
+    window.onload = function() {
       if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) {
           alert('Opera');
         }
@@ -42,6 +42,6 @@
           alert('unknown');
         }
     }
-    </script>
+  </script>
 </body>
 </html>
