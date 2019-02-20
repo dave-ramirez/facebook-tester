@@ -57,6 +57,22 @@
         if (navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/FBAV/i)) {
             alert('facebook browser');
         }
+
+        var userAgent = window.navigator.userAgent.toLowerCase(),
+        safari = /safari/.test( userAgent ),
+        ios = /iphone|ipod|ipad/.test( userAgent );
+
+    if( ios ) {
+        if ( safari ) {
+            //safari
+            alert('safari');
+        } else if ( !safari ) {
+            //webview
+            alert('no safari');
+        };
+    } else {
+        //not iOS
+};
     }
   </script>
 </body>
