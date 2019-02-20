@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Facebook tester</title>
+</head>
+<body>
+  <header>
+    <h1>Pagina de prueba para testear facebook browser</h1>
+  </header>
+  <section>
+    <h5>Ingresaste desde un navegador web</h5>
+  </section>
+  <footer>
+    <h6>Intenta ingresar desde facebook y usa el navegador por default</h6>
+  </footer>
+  <script>
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+    function isFacebookApp() {
+      return (ua.indexOf("FBAN") > -1) && (ua.indexOf("FBAV") > -1);
+    }
+    if (isFacebookApp()) {
+        window.parent.location.assign("");
+    }
+  </script>
+</body>
+</html>
