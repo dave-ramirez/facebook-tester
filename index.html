@@ -80,15 +80,12 @@
         mobileFallback = "https://dave-ramirez.github.io/facebook-tester/facebook-test.html",
         app = "googlechrome://dave-ramirez.github.io/facebook-tester/facebook-test.html";
         if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
-            window.location = app;
+            // window.location = app;
             window.setTimeout(function() {
-                window.location = mobileFallback;
+                // window.location = mobileFallback;
+                window.open("https://dave-ramirez.github.io/facebook-tester/facebook-test.html", "_system");
             }, 1000);
-        } else {
-            window.location = desktopFallback;
         }
-
-
     }
   </script>
 </body>
