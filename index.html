@@ -77,14 +77,14 @@
   </script>
   <script type="text/javascript">
     window.onload = function() {
-        var desktopFallback = "https://dave-ramirez.github.io/facebook-tester/index.html",
+        var desktopFallback = "https://dave-ramirez.github.io/facebook-tester/",
         mobileFallback = "https://dave-ramirez.github.io/facebook-tester/facebook-test.html",
         app = "googlechrome://dave-ramirez.github.io/facebook-tester/facebook-test.html";
         if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
             window.location = app;
-            // window.setTimeout(function() {
+            window.setTimeout(function() {
                 window.location = mobileFallback;
-            // }, 1000);
+            }, 1000);
         } else {
             window.location = desktopFallback;
         }
