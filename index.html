@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -16,7 +16,7 @@
   <footer>
     <h6>Intenta ingresar desde facebook y usa el navegador por default</h6>
   </footer>
-  <script>
+  <!-- <script>
     window.onload = function() {
       var ua = navigator.userAgent || navigator.vendor || window.opera;
       function isFacebookApp() {
@@ -27,7 +27,7 @@
           window.parent.location.assign("https://dave-ramirez.github.io/facebook-tester/facebook-test.html");
       }
   };
-  </script>
+  </script> -->
   <script>
     window.onload = function() {
       if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) {
@@ -75,33 +75,20 @@
 };
     }
   </script>
+  <script type="text/javascript">
+    window.onload = function() {
+        var desktopFallback = "https://dave-ramirez.github.io/facebook-tester/index.html",
+        mobileFallback = "https://dave-ramirez.github.io/facebook-tester/facebook-test.html",
+        app = "googlechrome://dave-ramirez.github.io/facebook-tester/facebook-test.html";
+        if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+            window.location = app;
+            window.setTimeout(function() {
+                window.location = mobileFallback;
+            }, 25);
+        } else {
+            window.location = desktopFallback;
+        }
+    };
+</script>
 </body>
-</html> -->
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
-        <script type="text/javascript">
-            window.onload = function() {
-                var desktopFallback = "https://dave-ramirez.github.io/facebook-tester/index.html",
-                mobileFallback = "https://dave-ramirez.github.io/facebook-tester/facebook-test.html",
-                app = "googlechrome://dave-ramirez.github.io/facebook-tester/facebook-test.html";
-                if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
-                    window.location = app;
-                    window.setTimeout(function() {
-                        window.location = mobileFallback;
-                    }, 25);
-                } else {
-                    window.location = desktopFallback;
-                }
-                function killPopup() {
-                    window.removeEventListener('pagehide', killPopup);
-                }
-                window.addEventListener('pagehide', killPopup);
-            };
-        </script>
-    </body>
 </html>
